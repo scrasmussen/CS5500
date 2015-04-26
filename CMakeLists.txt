@@ -53,6 +53,7 @@ set(common_srcs
   common/interfaces/IVertexContainer.cpp
 
   common/util/vector3.cpp
+  common/util/Compass.cpp
 
   common/voxel/block.cpp
   common/voxel/chunk.cpp
