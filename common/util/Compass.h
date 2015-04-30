@@ -4,8 +4,7 @@
 #include "tbb/blocked_range.h"
 #include "tbb/concurrent_queue.h"
 #include "../world.h"
-#include "vector3.cpp"
-
+#include "../voxel/chunkmanager.cpp"
 
 class Compass
 {
@@ -13,12 +12,11 @@ class Compass
   glm::vec3 currentPos;
   int n;
   World world;
+  ChunkManager chunk;
 
-  Compass(World, glm::vec3);
-  tbb::concurrent_queue<glm::vec3> getQueue( glm::vec3&,int);
-  int find(BlockType);
-
-  
+  Compass(World, ChunkManager, glm::vec3);
+  tbb::concurrent_queue<glm::vec3> getQueue( glm::vec3&,int, int);
+  glm::vec3 find(BlockType);
 
 };
 #endif
